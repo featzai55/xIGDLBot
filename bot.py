@@ -115,7 +115,7 @@ def stories(update, context):
                             photos = soup.findAll(class_='story-image')
 
                             for video in videos:
-                                print(video['src'])
+                                print(video['type'])
                                 context.bot.send_video(
                                     chat_id=update.message.chat_id, video=f"https://www.insta-stories.com{video['src']}")
 
