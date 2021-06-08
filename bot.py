@@ -121,7 +121,7 @@ def stories(update, context):
 
                             for photo in photos:
                                 context.bot.send_photo(
-                                    chat_id=update.message.chat_id, photo=f"https://www.insta-stories.com{photo['src']")
+                                    chat_id=update.message.chat_id, photo=f"https://www.insta-stories.com{photo['src']}")
 
                             bot.send_message(
                                 text="Thanks for using @xIGDLBot\nPlease /donate to keep this service alive!", chat_id=update.message.chat_id)
