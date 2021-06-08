@@ -117,7 +117,7 @@ def stories(update, context):
                             for video in videos:
                                 src = video.find("source")['src']
                                 context.bot.send_video(
-                                    chat_id=update.message.chat_id, video=f"https://www.insta-stories.com{src})
+                                    chat_id=update.message.chat_id, video=f"https://www.insta-stories.com{src}")
 
                             for photo in photos:
                                 context.bot.send_photo(
