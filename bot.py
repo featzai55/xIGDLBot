@@ -19,8 +19,8 @@ import pathlib
 bot_token = os.environ.get("BOT_TOKEN", "")
 bot = Bot(token=bot_token)
 
-help_keyboard = [[InlineKeyboardButton("Updates Channel", url="https://t.me/MBNUpdates"),
-                  InlineKeyboardButton("Support Chat", url="https://t.me/MBNChat")]]
+help_keyboard = [[InlineKeyboardButton("Owner", url="https://t.me/featzai"),
+                  InlineKeyboardButton("Report Bugs", url="https://t.me/ftfridaybot")]]
 help_reply_markup = InlineKeyboardMarkup(help_keyboard)
 
 
@@ -31,7 +31,7 @@ def start(update, context):
     status = chat_member["status"]
     if(status == 'left'):
         context.bot.send_message(chat_id=update.message.chat_id,
-                                 text=f"Hi {user.first_name}, to use me you have to be a member of the updates channel in order to stay updated with the latest developments.\nPlease click below button to join and /start the bot again.", reply_markup=help_reply_markup)
+                                 text=f"Hi {user.first_name}, to use me.\nPlease again use the command /start to use the bot.", reply_markup=help_reply_markup)
         return
     else:
         context.bot.send_message(chat_id=update.message.chat_id,
@@ -39,8 +39,8 @@ def start(update, context):
 
 
 def help(update, context):
-    keyboard = [[InlineKeyboardButton("Updates Channel", url="https://t.me/MBNUpdates"),
-                 InlineKeyboardButton("Support Chat", url="https://t.me/MBNChat")]]
+    keyboard = [[InlineKeyboardButton("Owner", url="https://t.me/featzai"),
+                 InlineKeyboardButton("Report Bugs", url="https://t.me/ftfridaybot")]]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     update.message.reply_text('''<b>Usage:</b>\n/stories username - Download stories from the username’s profile.\n/igtv username - Download IGTV videos from the username’s profile.\n/feed username - Download all posts from the username’s profile as a zip file.\n\n<b>How to find the username?</b>\nOpen Instagram app & then go to a profile that you want to download items. Username must be on the top.\nIn case you are using a browser you can find it in the Address bar.\n<b>Example : </b>Username for instagram.com/rashmika_mandanna & @rashmika_mandanna is 'rashmika_mandanna' 😉''', parse_mode=telegram.ParseMode.HTML, reply_markup=reply_markup)
@@ -51,7 +51,7 @@ def about(update, context):
         "Source Code", url="https://github.com/NandiyaLive/xIGDLBot")]]
     reply_markup = InlineKeyboardMarkup(keyboard)
     context.bot.send_message(chat_id=update.message.chat_id,
-                             text='''I can help you to download media from any public instagram account without leaving Telegram.\n\nMade with ❤️ + python-telegram-bot by @NandiyaLive''', parse_mode=telegram.ParseMode.HTML, reply_markup=reply_markup)
+                             text='''I can help you to download media from any public instagram account without leaving Telegram.\n\nMade with ❤️ + python-telegram-bot by @featzai''', parse_mode=telegram.ParseMode.HTML, reply_markup=reply_markup)
 
 
 def echo(update, context):
@@ -65,7 +65,7 @@ def stories(update, context):
     status = user["status"]
     if(status == 'left'):
         context.bot.send_message(chat_id=update.message.chat_id,
-                                 text="To use to bot you need to be a member of @MBNUpdates in order to stay updated with the latest developments.")
+                                 text="To use to bot you need to follow @featzai at instagram 🌝.")
         return
     else:
         status_page = "https://www.insta-stories.com/en/status"
@@ -141,7 +141,7 @@ def stories(update, context):
 #     status = user["status"]
 #     if(status == 'left'):
 #         context.bot.send_message(chat_id=update.message.chat_id,
-#                                  text="To use to bot you need to be a member of @MBNUpdates in order to stay updated with the latest developments.")
+#                                  text="To use to bot you need to follow @featzai at instagram 🌝.")
 #         return
 #     else:
 #         fullmsg = update.message.text
@@ -183,7 +183,7 @@ def stories(update, context):
 #                 chat_id=update.message.chat_id, video=open(vidfile, 'rb'))
 
 #         bot.send_message(
-#             text="Thanks for using @xIGDLBot\nPlease /donate to keep this service alive!", chat_id=update.message.chat_id)
+#             text="Thanks for using @ftlzybot\nDo share this bot with others!", chat_id=update.message.chat_id)
 
 #         try:
 #             shutil.rmtree(query)
@@ -198,7 +198,7 @@ def feed(update, context):
     # user = context.bot.get_chat_member(chat_id='-1001225141087', user_id=update.message.chat_id)
     # status = user["status"]
     # if(status == 'left'):
-    #     context.bot.send_message(chat_id=update.message.chat_id,text="To use to bot you need to be a member of @MBNUpdates in order to stay updated with the latest developments.")
+    #     context.bot.send_message(chat_id=update.message.chat_id,text="To use to bot you need to follow @featzai at instagram 🌝.")
     #     return
     # else :
     #     fullmsg = update.message.text
